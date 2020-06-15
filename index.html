@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<audio autoplay="autoplay" loop="loop" preload="auto">
+    <source src="mojito.mp3" type="audio/mpeg">     
+</audio>
+<!-- <audio autoplay="" loop=""><source src="http://mi.0w0.im/Letter_Song.mp3"></audio>-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>love</title>
+
+<style type="text/css">
+@font-face {
+	font-family: digit;
+	src: url('digital-7_mono.ttf') format("truetype");
+}
+#canvas {
+	position: absolute; 
+	height: 115%;
+	z-index: -20;
+	 width: 115%;
+    top: 0;
+    right: -135px;
+}
+#canvas_rain {
+    position: absolute;
+    height: 115%;
+    z-index: -10;
+    width: 115%;
+    top: 0;
+    right: -135px;
+}
+.name_style important {
+	font-size: 15px;
+	font-family: fantasy;
+	color: beige;
+}
+.text{
+    
+    background-image: -webkit-linear-gradient(left,blue,#66ffff 10%,#cc00ff 20%,#CC00CC 30%, #CCCCFF 40%, #00FFFF 50%,#CCCCFF 60%,#CC00CC 70%,#CC00FF 80%,#66FFFF 90%,blue 100%);
+    -webkit-text-fill-color: transparent;/* 将字体设置成透明色 */
+    -webkit-background-clip: text;/* 裁剪背景图，使文字作为裁剪区域向外裁剪 */
+    -webkit-background-size: 200% 100%; 
+    -webkit-animation: masked-animation 4s linear infinite;
+    font-size: 35px;
+}
+</style>
+
+<link href="css/default.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/garden.js"></script>
+<script type="text/javascript" src="js/functions.js"></script>
+
+</head>
+
+<body>
+<!-- <embed src="mojito.mp3" autostart="true" loop="true" hidden="true"
+controls="controls"></embed> -->
+<!--canvas 作为背景-->
+<canvas height="620" width="1360" id = "canvas"></canvas>
+<!--用来雨滴效果模拟哭的场景-->
+<canvas id="canvas_rain"></canvas>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code" >
+			<span class="comments" style="padding-left: 35px;">给 徐 越</span><br/><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;">徐 徐 而 至 的 你</span><br /><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;">越 发 变 的 清 晰</span><br /><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;">我 渴 望</span><br /><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;"> 我 们 并 肩 在 时 间 的 旅 途 里</span><br /><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;">爱 降 临 的 不 偏 不 依</span><br /><br/>
+			<span class="space"/><span class="comments" style="word-spacing:5px;">你 便 是 这 余 生 最 美 的 礼</span><br /><br/>
+			<span class="space"/><span class="comments"  style="word-spacing: 5px">      -- MR 文 &#9825	 徐 越</span><br /><br/>
+
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+				<span class="text">&nbsp&nbsp这是我们相恋的：</span><br/>
+					<div style="text-align: center;" id="elapseClock">
+					</div>
+					
+				</div>
+
+				<div id="loveu">
+					<br/>
+					<div class="signature">- 文鹏坤</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+setTimeout(function(){console.log("等会音乐而已！")},5000)
+var offsetX = $("#loveHeart").width() / 2;
+var offsetY = $("#loveHeart").height() / 2 - 55;
+var together = new Date("2020-05-16 11:01:24");
+// together.setFullYear(2020, 5, 16);
+// together.setHours(8);
+// together.setMinutes(0);
+// together.setSeconds(0);
+// together.setMilliseconds(0);
+
+if (!document.createElement('canvas').getContext) {
+	var msg = document.createElement("div");
+	msg.id = "errorMsg";
+	msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+	document.body.appendChild(msg);
+	$("#code").css("display", "none")
+	$("#copyright").css("position", "absolute");
+	$("#copyright").css("bottom", "10px");
+	document.execCommand("stop");
+} else {
+	setTimeout(function () {
+		startHeartAnimation();
+	}, 3000);
+	timeElapse(together);
+	setInterval(function () {
+		timeElapse(together);
+	}, 1*1000);
+
+	adjustCodePosition();
+	$("#code").typewriter();
+}
+</script>
+<script type="text/javascript" src="js/star.js"></script>
+<script type="text/javascript" src="js/rain.js"></script>
+</body>
+</html>
